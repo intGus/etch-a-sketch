@@ -15,7 +15,7 @@ let row = 1;
 for (let i = 1; i <= 4096; i++) {
   const square = document.createElement('div');
   //square.textContent = i;
-  square.style.border = '1px solid black';
+  //square.style.border = '1px solid black';
   square.style.aspectRatio = '1'
   square.style.gridRow = row;
   square.style.gridColumn = column;
