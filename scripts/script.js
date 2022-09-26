@@ -27,10 +27,21 @@ for (let i = 1; i <= 4096; i++) {
   container.appendChild(square);
 }
 
-container.addEventListener("mouseover", function (e) {
-  e.target.classList.add('hovered');
+isClicked = false;
+container.addEventListener("mousedown", () =>{
+  isClicked = true;
+})
+
+container.addEventListener("mouseup", () =>{
+  isClicked = false;
+})
+
+container.addEventListener("mousemove", function (e) {
+  if (isClicked == true){
+    e.target.classList.add('hovered');
   //e.target.style.background = 'blue'
   //console.log(e.target)
+  };
 });
 
 let allDivs = container.querySelectorAll(":scope > div");
