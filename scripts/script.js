@@ -38,9 +38,15 @@ container.addEventListener("mouseup", () =>{
 
 container.addEventListener("mousemove", function (e) {
   if (isClicked == true){
-    e.target.classList.add('hovered');
-  //e.target.style.background = 'blue'
-  //console.log(e.target)
+    //e.target.classList.add('hovered');
+    e.target.style.background = 'black';
+    let opacity = Number(e.target.style.opacity)
+    if (opacity == ''){
+      opacity = 0.1
+    }else{
+      opacity += 0.1
+    }
+    e.target.style.opacity = `${opacity}`;
   };
 });
 
@@ -48,5 +54,5 @@ let allDivs = container.querySelectorAll(":scope > div");
 
 button.addEventListener('click', () => {
   console.log('clicked button')
-  allDivs.forEach((item) => item.classList.remove('hovered'))
+  allDivs.forEach((item) => item.style.background = 'white')
 });
